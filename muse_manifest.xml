@@ -1,0 +1,59 @@
+<manifest alg="2" build="2015.1.0.342" opt="false" iceEnabled="true" iceMarkupVersion="2" iceEnabledOptions="link,responsive" exportTarget="other" domain="example.com" resolutions="1x" timestamp="1457208180363">
+  <folder name="css">
+    <file name="site_global.css" crc="357377259"/>
+    <file name="master_a-master.css" crc="4251873474" ref="index:inicio:registro:regalo3:regalo1:regalo2:cambio-contrasena:credito:mi-musica:olvide-mi-cotrasena"/>
+    <file name="index.css" crc="4031539579" ref="index"/>
+    <file name="inicio.css" crc="4282352152" ref="inicio"/>
+    <file name="registro.css" crc="4247596301" ref="registro"/>
+    <file name="regalo3.css" crc="4227546227" ref="regalo3"/>
+    <file name="regalo1.css" crc="449186786" ref="regalo1"/>
+    <file name="regalo2.css" crc="331919612" ref="regalo2"/>
+    <file name="cambio-contrasena.css" crc="398834143" ref="cambio-contrasena"/>
+    <file name="credito.css" crc="3797752490" ref="credito"/>
+    <file name="mi-musica.css" crc="507031777" ref="mi-musica"/>
+    <file name="olvide-mi-cotrasena.css" crc="453389796" ref="olvide-mi-cotrasena"/>
+  </folder>
+  <folder name="scripts">
+    <file name="jquery-1.8.3.min.js" crc="409338010" ref="index:inicio:registro:regalo3:regalo2:regalo1:mi-musica:credito:cambio-contrasena:olvide-mi-cotrasena"/>
+    <file name="museutils.js" crc="4190794036" ref="index:inicio:registro:regalo3:regalo2:regalo1:mi-musica:credito:cambio-contrasena:olvide-mi-cotrasena"/>
+    <file name="whatinput.js" crc="84559013" ref="index:inicio:registro:regalo3:regalo2:regalo1:mi-musica:credito:cambio-contrasena:olvide-mi-cotrasena"/>
+    <file name="jquery.watch.js" crc="349565855" ref="index:inicio:registro:regalo3:regalo2:regalo1:mi-musica:credito:cambio-contrasena:olvide-mi-cotrasena"/>
+    <file name="jquery.musemenu.js" crc="3866264083" ref="inicio:mi-musica:credito"/>
+    <file name="html5shiv.js" crc="4241844378" ref="inicio:regalo3:regalo2:regalo1:mi-musica:credito:cambio-contrasena:olvide-mi-cotrasena"/>
+    <file name="webpro.js" crc="488283310" ref="credito"/>
+    <file name="musewpdisclosure.js" crc="3898505244" ref="credito"/>
+  </folder>
+  <folder name="images">
+    <file name="d99e7ce9-b514-479b-b7ba-41c7ecdb68ef.jpg" crc="3829280078" seo="true" ref="index:inicio:registro:regalo3:regalo2:regalo1:mi-musica:credito:cambio-contrasena:olvide-mi-cotrasena"/>
+    <file name="u419-4.png" crc="400202590" ref="index"/>
+    <file name="u1128-4.png" crc="311334483" ref="inicio"/>
+    <file name="u425-4.png" crc="107051597" ref="mi-musica"/>
+    <file name="u422-4.png" crc="443360970" ref="credito"/>
+    <file name="u433-4.png" crc="4180361194" ref="credito"/>
+    <file name="u436-6.png" crc="3870048074" ref="credito"/>
+    <file name="u444-6.png" crc="3866151751" ref="credito"/>
+    <file name="u466-4.png" crc="3779852376" ref="credito"/>
+    <file name="u590-5.png" crc="3812845207" ref="credito"/>
+    <file name="u469-4.png" crc="247647566" ref="credito"/>
+    <file name="u472-4.png" crc="511656452" ref="credito"/>
+    <file name="u1169-4.png" crc="443360970" ref="cambio-contrasena"/>
+    <file name="u1191-4.png" crc="443360970" ref="olvide-mi-cotrasena"/>
+    <file name="u1210-4.png" crc="443360970" ref="registro"/>
+    <file name="u1238-4.png" crc="3840298615" ref="credito"/>
+    <file name="u1235-6.png" crc="59075164" ref="credito"/>
+    <file name="u1241-4.png" crc="270529778" ref="credito"/>
+    <file name="u1378-4.png" crc="443360970" ref="regalo3"/>
+    <file name="u1420-4.png" crc="443360970" ref="regalo2"/>
+    <file name="u1428-4.png" crc="443360970" ref="regalo1"/>
+  </folder>
+  <file name="index.html" crc="4263717214" seo="true" mt="1457042668192" redirect="true"/>
+  <file name="inicio.html" crc="428613867" seo="true" mt="1457208141899" redirect="true"/>
+  <file name="registro.html" crc="412863825" seo="true" mt="1457060747585" redirect="true"/>
+  <file name="regalo3.html" crc="382207822" seo="true" mt="1457120989437" redirect="true"/>
+  <file name="regalo2.html" crc="3835856581" seo="true" mt="1457120998313" redirect="true"/>
+  <file name="regalo1.html" crc="48142241" seo="true" mt="1457120962624" redirect="true"/>
+  <file name="mi-musica.html" crc="536508498" seo="true" mt="1457208141901" redirect="true"/>
+  <file name="credito.html" crc="400659066" seo="true" mt="1457208141903" redirect="true"/>
+  <file name="cambio-contrasena.html" crc="3970776926" seo="true" mt="1457208156713" redirect="true"/>
+  <file name="olvide-mi-cotrasena.html" crc="3937293891" seo="true" mt="1457208153361" redirect="true"/>
+</manifest>
