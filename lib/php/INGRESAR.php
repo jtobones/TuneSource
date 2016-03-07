@@ -1,10 +1,10 @@
 <?php
 	include("CONECTAR_DB.php");
-	function loginUser($connect, $username, $email) {
-		if(checkExistingUser($connect, $username, $email)) {
-			$query = "UPDATE user_data SET is_logged_in=1 WHERE user_name='$username' AND pass='$email'";
+	function loginUser($connect, $username, $email, $correo) {
+		if(checkExistingUser($connect, $username, $email, $correo)) {
+			$query = "UPDATE user_data SET is_logged_in=1 WHERE user_name='$username' AND pass='$email' AND correo=$correo";
 			mysqli_query($connect, $query) or die("Error: " . mysqli_error());
-			$query = "SELECT user_id FROM user_data WHERE user_name='$username' AND pass='$email'";
+			$query = "SELECT user_id FROM user_data WHERE user_name='$username' AND pass='$email' AND correo=$correo";
 			$result = mysqli_query($connect, $query) or die("Error: ".mysqli_error());
 			$row = mysqli_fetch_array($result);
 			return $row[0];

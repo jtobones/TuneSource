@@ -38,29 +38,29 @@
 <div class="registro">
   <div class="heading">
     <h2>Registro</h2>
-    <form action="#">
+    <form action="" method="post">
       
       <div class="input-group input-group-lg">
           <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
-          <input type="email" name="email" class="form-control" placeholder="Correo electrónico">
+          <input type="email" name="correo" class="form-control" placeholder="Correo electrónico">
         </div>
       
        <div class="input-group input-group-lg">
         <span class="input-group-addon"><i class="fa fa-user"></i></span>
-        <input type="text" name="user" class="form-control" placeholder="Usuario">
+        <input type="text" name="username" class="form-control" placeholder="Usuario">
         </div>
 
         <div class="input-group input-group-lg">
           <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-          <input type="password" name="pass" class="form-control" placeholder="Contraseña">
+          <input type="password" name="email" class="form-control" placeholder="Contraseña">
         </div>
         
         <div class="input-group input-group-lg">
           <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-          <input type="password" name="pass" class="form-control" placeholder="Repetir la contraseña">
+          <input type="password" name="email" class="form-control" placeholder="Repetir la contraseña">
         </div>
-        
-        <button type="submit" class="btn btn-default">Registrarse</button>
+        <input type="hidden" name="formType" value="Registrarse"/>
+        <input type="submit" value="Registrarse" class="btn btn-default"/>
       </form>
 </div>
  		</div>
@@ -111,7 +111,41 @@ $(document).ready(function(){
     });
 });
 </script>
-
+<?php
+			require("lib/php/CONECTAR_DB.php");
+			require("lib/php/INGRESAR.php");
+			require("lib/php/REGISTRAR.php");
+			if(!empty($_POST["formType"])) {
+				if($_POST["formType"] == "Registrarse") {
+					$username = stripslashes(htmlspecialchars($_POST["username"]));
+					$email = stripslashes(htmlspecialchars($_POST["email"]));
+                                        $correo = stripslashes(htmlspecialchars($_POST["correo"]));
+					$user = createUser($connect, $username, $email, $correo);
+					if($user == false) {
+						echo "Usuario Existe";
+                                                header("Location: Existe.php");
+					}
+                                        else {
+						
+						echo "Usuario creado";
+						header("Location: Creado.php");
+					}
+                                        
+				}
+				else if($_POST["formType"] == "Login") {
+					$username = $_POST["username"];
+					$email = $_POST["email"];
+					$id = loginUser($connect, $username, $email);
+					if($id == false) {
+						echo "Error en el Nombre de usuario o Password";
+					}
+					
+				}
+			}
+			else {
+				echo "Llenar Informacion";
+			}
+		?>
 
    </body>
 </html>

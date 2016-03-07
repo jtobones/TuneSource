@@ -2,9 +2,9 @@
 	
 include("CONECTAR_DB.php");
 
-        function createUser($connect, $username, $email) {
+        function createUser($connect, $username, $email, $correo) {
 		if(checkAvailability($connect, $username)) {
-			$query = "INSERT INTO user_data SET user_name='$username', pass='$email'";
+			$query = "INSERT INTO user_data SET user_name='$username', pass='$email', correo='$correo'";
 			mysqli_query($connect,$query) or die("Error: " . mysqli_error());
 			return true;
 		}

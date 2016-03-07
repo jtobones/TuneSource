@@ -42,14 +42,24 @@
 <div class="olvpass">
   <div class="heading">
     <h2>Escriba su correo de registro</h2>
-    <form action="#">
-
-      <div class="input-group input-group-lg">
+    <form action="" method="post">
+        
+        <div class="input-group input-group-lg">
         <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
-        <input type="text" class="form-control" placeholder="Correo electónico">
-          </div>
-
-        <button type="button" class="btn btn-default">Ingresar</button>
+        <input type="email" class="form-control" placeholder="Correo electónico">
+        </div>
+        
+        <div class="input-group input-group-lg">
+        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+        <input type="text" name="username" class="form-control" placeholder="Usuario">
+        </div>
+        
+        <div class="input-group input-group-lg">
+          <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+          <input type="password" name="email" class="form-control" placeholder="Contraseña">
+        </div>
+        <input type="hidden" name="formType" value="Ingresar"/>
+        <input type="submit" value="Ingresar" class="btn btn-default"/>
 
        </form>
     </div>
@@ -57,7 +67,7 @@
 </div>
 </div>
    <div class="verticalspacer"></div>
-  </div>
+  
   <!-- JS includes -->
   <script type="text/javascript">
    if (document.location.protocol != 'https:') document.write('\x3Cscript src="http://musecdn.businesscatalyst.com/scripts/4.0/jquery-1.8.3.min.js" type="text/javascript">\x3C/script>');
@@ -73,7 +83,8 @@
    $(document).ready(function() { try {
 (function(){var a={},b=function(a){if(a.match(/^rgb/))return a=a.replace(/\s+/g,"").match(/([\d\,]+)/gi)[0].split(","),(parseInt(a[0])<<16)+(parseInt(a[1])<<8)+parseInt(a[2]);if(a.match(/^\#/))return parseInt(a.substr(1),16);return 0};(function(){$('link[type="text/css"]').each(function(){var b=($(this).attr("href")||"").match(/\/?css\/([\w\-]+\.css)\?(\d+)/);b&&b[1]&&b[2]&&(a[b[1]]=b[2])})})();(function(){$("body").append('<div class="version" style="display:none; width:1px; height:1px;"></div>');
 for(var c=$(".version"),d=0;d<Muse.assets.required.length;){var f=Muse.assets.required[d],g=f.match(/([\w\-\.]+)\.(\w+)$/),k=g&&g[1]?g[1]:null,g=g&&g[2]?g[2]:null;switch(g.toLowerCase()){case "css":k=k.replace(/\W/gi,"_").replace(/^([^a-z])/gi,"_$1");c.addClass(k);var g=b(c.css("color")),h=b(c.css("background-color"));g!=0||h!=0?(Muse.assets.required.splice(d,1),"undefined"!=typeof a[f]&&(g!=a[f]>>>24||h!=(a[f]&16777215))&&Muse.assets.outOfDate.push(f)):d++;c.removeClass(k);break;case "js":k.match(/^jquery-[\d\.]+/gi)&&
-typeof $!="undefined"?Muse.assets.required.splice(d,1):d++;break;default:throw Error("Unsupported file type: "+g);}}c.remove();if(Muse.assets.outOfDate.length||Muse.assets.required.length)c="Some files on the server may be missing or incorrect. Clear browser cache and try again. If the problem persists please contact website author.",(d=location&&location.search&&location.search.match&&location.search.match(/muse_debug/gi))&&Muse.assets.outOfDate.length&&(c+="\nOut of date: "+Muse.assets.outOfDate.join(",")),d&&Muse.assets.required.length&&(c+="\nMissing: "+Muse.assets.required.join(",")),alert(c)})()})();/* body */
+typeof $!="undefined"?Muse.assets.required.splice(d,1):d++;break;default:throw Error("Unsupported file type: "+g);}}c.remove();if(Muse.assets.outOfDate.length||Muse.assets.required.length)c="Some files on the server may be missing or incorrect. Clear browser cache and try again. If the problem persists please contact website author.",(d=location&&location.search&&location.search.match&&location.search.match(/muse_debug/gi))&&Muse.assets.outOfDate.length&&(c+="\nOut of date: "+Muse.assets.outOfDate.join(",")),d&&Muse.assets.required.length&&(c+="\nMissing: "+Muse.assets.required.join(",")),alert(c)})()})();
+/* body */
 Muse.Utils.transformMarkupToFixBrowserProblemsPreInit();/* body */
 Muse.Utils.prepHyperlinks(true);/* body */
 Muse.Utils.resizeHeight('.browser_width');/* resize height */
@@ -100,7 +111,37 @@ $(document).ready(function(){
     });
 });
 </script>
-
+<?php
+			require("lib/php/CONECTAR_DB.php");
+			require("lib/php/INGRESAR.php");
+			require("lib/php/CAMBIARPASS.php");
+			if(!empty($_POST["formType"])) {
+				if($_POST["formType"] == "Ingresar") {
+					$username = stripslashes(htmlspecialchars($_POST["username"]));
+					$email = stripslashes(htmlspecialchars($_POST["email"]));
+                                        $correo = stripslashes(htmlspecialchars($_POST["correo"]));
+					$user = createUser($connect, $username, $email, $correo);
+					echo "Contraseña cambiada";
+					session_start();
+					$_SESSION["id"] = $id;
+					header("Location: index.html");
+					
+                                        
+				}
+				else if($_POST["formType"] == "Login") {
+					$username = $_POST["username"];
+					$email = $_POST["email"];
+					$id = loginUser($connect, $username, $email);
+					if($id == false) {
+						echo "Error en el Nombre de usuario o Password";
+					}
+					
+				}
+			}
+			else {
+				echo "Llenar Informacion";
+			}
+		?>
 
    </body>
 </html>

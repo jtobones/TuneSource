@@ -16,6 +16,7 @@ CREATE TABLE IF NOT EXISTS `user_data` (
   `is_logged_in` int(11) NOT NULL,
   `is_playing` int(11) NOT NULL,
   `pass` varchar(20) NOT NULL,
+  `correo` varchar(20) NOT NULL,
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `user_id` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
