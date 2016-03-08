@@ -120,12 +120,13 @@ $(document).ready(function(){
 					$username = stripslashes(htmlspecialchars($_POST["username"]));
 					$email = stripslashes(htmlspecialchars($_POST["email"]));
                                         $correo = stripslashes(htmlspecialchars($_POST["correo"]));
-					$user = createUser($connect, $username, $email, $correo);
-					echo "Contraseña cambiada";
-					session_start();
-					$_SESSION["id"] = $id;
-					header("Location: index.html");
-					
+					$user = cambiarPass($connect, $username, $email, $correo);
+					if($user == false) {
+					    echo "Usuario No Existe.";
+					}else{
+                                            echo "Contraseña cambiada";
+                                            header("Location: index.html");
+					}
                                         
 				}
 				else if($_POST["formType"] == "Login") {
