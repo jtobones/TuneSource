@@ -20,5 +20,5 @@ div#feedback { position : absolute; top : 300px; left : 300px; }
 div#player_1 { color : blue; font-size : 30px; }
 div#player_2 { color : red; font-size : 30px; position : relative; left :300px; top: 0px;}
 div#board { width : 300px; height : 300px; position : relative; left : 100px; }
-div#controller { position : absolute; left : 600px; top : 200px; }
-.buttonplay { width : 90px; height : 90px; }
+div#controller { position : relative; left : 600px; top : 200px; }
+.buttonplay { color: white; width : 90px; height : 90px; }

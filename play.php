@@ -69,7 +69,7 @@ include_once '/lib/php/dbconfig.php';
     <li audiourl="06.mp3" cover="cover6.jpg" artist="Artist 6">06.mp3</li>
     <li audiourl="07.mp3" cover="cover7.jpg" artist="Artist 7">07.mp3</li>
 
-<-->
+
 </ul>
 
 

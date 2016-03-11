@@ -38,7 +38,7 @@
 <div class="registro">
   <div class="heading">
     <h2>Registro</h2>
-    <form action="" method="post">
+    <form action="Registrar.php" method="post">
       
       <div class="input-group input-group-lg">
           <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
@@ -111,6 +111,7 @@ $(document).ready(function(){
     });
 });
 </script>
+<div id="feedback">
 <?php
 			require("lib/php/CONECTAR_DB.php");
 			require("lib/php/INGRESAR.php");
@@ -146,6 +147,6 @@ $(document).ready(function(){
 				echo "Llenar Informacion";
 			}
 		?>
-
+     </div>
    </body>
 </html>

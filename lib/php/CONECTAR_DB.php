@@ -1,8 +1,8 @@
 <?php
-	$host = "localhost";
-	$username = "root";
-	$password = "";
-	$database = "jtobones";
+	$host = "mysql.hostinger.es";
+	$username = "u944924796_root";
+	$password = "root.2016";
+	$database = "u944924796_ts";
 	$connect = mysqli_connect($host, $username, $password, $database);
         
         // Check connection
