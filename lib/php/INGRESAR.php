@@ -14,6 +14,10 @@
 		}
 	}
 	
+        function superUser($connect, $username, $email) {
+                 
+                }
+
 	function checkExistingUser($connect, $username, $email) {
 		$query = "SELECT pass FROM user_data WHERE user_name='$username'";
 		$result = mysqli_query($connect, $query) or die("Error while checking database");

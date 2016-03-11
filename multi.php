@@ -1,5 +1,5 @@
-﻿<?php
-include_once '/lib/php/dbconfig.php';
+<?php
+include_once 'lib/php/CONECTAR_DB.php';
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
