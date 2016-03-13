@@ -1,5 +1,6 @@
 <?php
-include_once 'lib/php/CONECTAR_DB.php';
+ include("lib/php/CONECTAR_DB.php");
+
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -13,59 +14,64 @@ include_once 'lib/php/CONECTAR_DB.php';
 </div>
 <div id="body">
 <form action="" method="POST" enctype="multipart/form-data">
-	<input type="file" name="files[]" multiple/>
-	<input type="submit"/>
+        <input type="file" name="files[]" multiple/>
+        <input type="submit"/>
 </form>
 
 <?php
 if(isset($_FILES['files'])){
     $errors= array();
-	foreach($_FILES['files']['tmp_name'] as $key => $tmp_name ){
-//	modo de poder subir varias veces el mismo archivo 
-//	$file_name = $key.$_FILES['files']['name'][$key];
-		$file_name = $_FILES['files']['name'][$key];
-		$file_size =$_FILES['files']['size'][$key];
-		$file_tmp =$_FILES['files']['tmp_name'][$key];
-		$file_type=$_FILES['files']['type'][$key];	
-        if($file_size > 4194304){
-			$errors[]='Tamaño del archivo no debe ser menor a 5 MB';
-        }		
+        foreach($_FILES['files']['tmp_name'] as $key => $tmp_name ){
+//      modo de poder subir varias veces el mismo archivo
+//      $file_name = $key.$_FILES['files']['name'][$key];
+                $file_name = $_FILES['files']['name'][$key];
+                $file_size =$_FILES['files']['size'][$key];
+                $file_tmp =$_FILES['files']['tmp_name'][$key];
+                $file_type=$_FILES['files']['type'][$key];
+                //tamaño (MB) ( 200 )* 1024 * 1024
+        if($file_size >  209715200){
+                        $errors[]='Tama&ntilde;o del archivo debe ser camenor a 10 MB';
 
-		
-		//insertar cancion subida en la base de datos
-        $query = "INSERT INTO tbl_uploads(file,artist,album,songname, type ,size) VALUES('$file_name','','','','$file_type','$file_size') ";
+        }
 
-		
+        //insertar cancion subida en la base de datos
+        
+        $query ="INSERT INTO tbl_uploads(file,artist,album,songname,genero, type,idtag ,size)  VALUES    ('$file_name'
+, '', '', '', '','$file_type','','$file_size') ";
+
         $desired_dir=$folder;
         if(empty($errors)==true){
             if(is_dir($desired_dir)==false){
-                mkdir("$desired_dir", 0700);		// Create directory if it does not exist
+                mkdir("$desired_dir", 0700);            // Create directory if it does not exist
             }
             if(is_dir("$desired_dir/".$file_name)==false){
                 move_uploaded_file($file_tmp,"$desired_dir/".$file_name);
-            }else{									// rename the file if another one exist
+            }else{                                                                      // rename the file if another
+one exist
                 $new_dir="$desired_dir/".$file_name.time();
-                 rename($file_tmp,$new_dir) ;				
+                 rename($file_tmp,$new_dir) ;
             }
-            mysqli_query($connect, $query) or die("Error while getting tile data.");
+            mysqli_query($connect, $query) or die("ERROR BASE DE DATOS");?>
+            <label>Cancion Subida...  <a href="view.php">click para escuchar   </a></label>
+                <?php
         }else{
-			?>
-     <label>Error al subir !</label>;
-     <label>Cancion Subida...  <a href="view.php">click para escuchar</a></label>
-     <?php
-                print_r($errors); ?>      <?php
+             //Error por exceso tamaño;
+                print_r($errors);
+
+
+                ?>
+                <label>Error al subir excede el Tama&ntilde;o  <a href="multi.php">Intentar de nuevo...  </a></label>
+                    <?php
         }
     }
-	?>     
-	<?php
-	if(empty($error)){
-		echo "Success"; ?>
-    
-     <label>Canciones Subidas...  <a href="view.php">click para escuchar</a></label>
+
+        if(empty($errors)==true){
+                echo "Success  ";
+     ?>
+
+     <label>Subir   <a href="multi.php">  Mas canciones  </a></label>
      <?php
-	}
-	?>
-    <?php
+        }
 }
 ?>
 
@@ -76,5 +82,4 @@ if(isset($_FILES['files'])){
 </div>
 </body>
 </html>
-
 
