@@ -16,6 +16,7 @@
   <link rel="stylesheet" type="text/css" href="lib/css/mi-musica.css?507031777" id="pagesheet"/>
   <link href="lib/css/player.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="lib/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="lib/css/styles.css" type="text/css" />
   <!-- Other scripts -->
   <script type="text/javascript">
    document.documentElement.className = document.documentElement.className.replace(/\bnojs\b/g, 'js');
@@ -53,6 +54,7 @@
    </nav>
    <img class="grpelem" id="u425-4" alt="Tune Source" src="images/u425-4.png" data-image-width="204"/><!-- rasterized frame -->
    <div class="grpelem" id="u1134"><!-- custom html -->
+    <div class="conteiner">
     <div class="player">
     <div class="pl"></div>
     <div class="title"></div>
@@ -66,8 +68,8 @@
     </div>
     <div class="volume"></div>
     <div class="tracker"></div>
-</div>
-<ul class="playlist">
+</div> 
+<ul class="playlist ">
 
     
     
@@ -80,7 +82,9 @@
 	?>
     
     <li audiourl="<?php echo $folder.$row['file'] ?>" cover="cover2.jpg" artist="Artist 2">"01.mp3"</li>
-	     
+	     <?php
+    }
+	?>
     
 
     <li audiourl="02.mp3" cover="cover2.jpg" artist="Artist 2">02.mp3</li>
@@ -90,12 +94,9 @@
     <li audiourl="06.mp3" cover="cover6.jpg" artist="Artist 6">06.mp3</li>
     <li audiourl="07.mp3" cover="cover7.jpg" artist="Artist 7">07.mp3</li>
 
-<audio controls>
-  <source src="playlist" type="audio/mpeg">
-Your browser does not support the audio element.
-</audio>
+
 </ul>
-       
+       </div>
 </div>
    <div class="grpelem" id="u1431"><!-- custom html -->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">

@@ -76,6 +76,10 @@ header a, a:visited {
 .pl:hover {
     top: 21px;
 }
+.conteiner{
+    background-color: #333333;
+    border-radius: 5px 5px 5px 5px;
+}
 .cover {
     background: transparent url(../../data/cover1.jpg) no-repeat scroll center top;
     border-radius: 5px 5px 5px 5px;

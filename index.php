@@ -118,10 +118,16 @@ $(document).ready(function(){
 						echo "Error al Ingreso";
 					}
 					else {
-						
+                                                $type = superUser($connect, $username, $email);
+						if($type == 0){
+                                                    session_start();
+                                                    header("Location: multi.php");
+                                                }
+                                                else{
 						session_start();
 						$_SESSION["id"] = $id;
 						header("Location: inicio.html");
+                                                }
 					}
 				}
 			}
