@@ -72,7 +72,7 @@
   </table>
     <h3>Buscar mas Canciones</h3>
     <p> artista, nombre cancion, album</p>
-    <form  method="post" action="search1.php?go"  id="searchform">
+    <form  method="post" action="search.php?go"  id="searchform">
       <input  type="text" name="name">
       <input  type="submit" name="submit" value="Search">
     </form>
