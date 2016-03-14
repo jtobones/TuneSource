@@ -90,6 +90,7 @@ header a, a:visited {
     width: 94px;
 }
 .controls {
+    
     cursor: pointer;
     height: 23px;
     left: 167px;
@@ -98,6 +99,7 @@ header a, a:visited {
     width: 138px;
 }
 .controls .play, .controls .pause, .controls .rew, .controls .fwd {
+    
     background: transparent url("../../img/spr.png") no-repeat scroll 0 0;
     float: left;
     height: 100%;
