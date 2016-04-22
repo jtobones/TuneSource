@@ -6,7 +6,9 @@
 	session_start();
 	$id = $_SESSION["id"];
 	logoutUser($connect, $id);
-	
+	echo $id;
+	header("Location: index.php");
+
 	
 	
 ?>

@@ -1,10 +1,10 @@
 <?php
-	$host = "mysql.hostinger.es";
-	$username = "u944924796_root";
-	$password = "root.2016";
-	$database = "u944924796_ts";
+	$host = "localhost";
+	$username = "root";
+	$password = "202";
+	$database = "tunesource";
 	$connect = mysqli_connect($host, $username, $password, $database);
-        
+        $folder = "uploads";
         // Check connection
 if (mysqli_connect_errno())
   {

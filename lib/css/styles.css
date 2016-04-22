@@ -76,10 +76,6 @@ header a, a:visited {
 .pl:hover {
     top: 21px;
 }
-.conteiner{
-    background-color: #333333;
-    border-radius: 5px 5px 5px 5px;
-}
 .cover {
     background: transparent url(../../data/cover1.jpg) no-repeat scroll center top;
     border-radius: 5px 5px 5px 5px;
@@ -90,7 +86,6 @@ header a, a:visited {
     width: 94px;
 }
 .controls {
-    
     cursor: pointer;
     height: 23px;
     left: 167px;
@@ -99,7 +94,6 @@ header a, a:visited {
     width: 138px;
 }
 .controls .play, .controls .pause, .controls .rew, .controls .fwd {
-    
     background: transparent url("../../img/spr.png") no-repeat scroll 0 0;
     float: left;
     height: 100%;

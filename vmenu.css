@@ -1,0 +1,33 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+.vmenu{
+list-style-type: none;
+margin: 0;
+padding: 0;
+width: 180px;
+}
+
+.vmenu li a{
+float: left;
+display: block;
+color: white;
+margin: 0 1px 0 0; /*Margenes entre el menu*/
+padding: 5px 10px;
+text-decoration: none;
+letter-spacing: 1px;
+background-color: black; /*Color por Default*/
+border-bottom: 1px solid white;
+}
+
+.vmenu li a:hover{
+background-color: #535353; /*Menu hover bgcolor*/
+}
+
+html>body .vmenu li a:active{ /* Apply mousedown effect (non IE browsers only) */
+border-style: inset;
+}
+
+</style>
+

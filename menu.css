@@ -1,0 +1,112 @@
+/* Horizontal menu */
+
+
+
+#menu, #menu-vertical{
+
+padding: 0;
+
+width: 100%;
+
+background: transparent;
+
+voice-family: "\"}\"";
+
+voice-family: inherit;
+}
+
+
+
+#menu ul{
+
+font: bold 11px Arial;
+
+margin:0;
+
+margin-left: 20px;
+
+padding: 0;
+
+list-style: none;
+
+}
+
+
+
+#menu li{
+
+display: inline;
+
+margin: 0 2px 0 0;
+
+padding: 0;
+
+text-transform:uppercase;
+
+}
+
+
+
+#menu-vertical li{
+display:block;
+margin: 15px 0 0 0;
+padding: 0;
+text-transform:uppercase;
+}
+
+
+
+#menu a {
+
+float: left;
+
+display: block;
+
+color: white;
+
+margin: 0 1px 0 0; /*Margenes entre el menu*/
+
+padding: 5px 10px;
+
+text-decoration: none;
+
+letter-spacing: 1px;
+
+background-color: black; /*Color por Default*/
+
+border-bottom: 1px solid white;
+
+}
+
+#menu-vertical a {
+color: white;
+margin-left:0px;
+padding:5px;
+text-decoration: none;
+
+letter-spacing: 1px;
+
+background-color: black; /*Color por Default*/
+
+border-bottom: 1px solid white;
+
+}
+
+
+
+#menu a:hover{
+
+background-color: #535353; /*Menu hover bgcolor*/
+
+}
+
+
+
+#menu #current a, #menu-vertical #current a{ /*TAB seleccionado, Página Actual*/
+
+background-color: #80931D;
+
+border-color: #80931D;
+
+}
+.clean {clear:both;}

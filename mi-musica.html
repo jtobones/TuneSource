@@ -16,8 +16,6 @@
   <link rel="stylesheet" type="text/css" href="lib/css/mi-musica.css?507031777" id="pagesheet"/>
   <link href="lib/css/player.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="lib/css/style.css" type="text/css" />
-    <link rel="stylesheet" href="lib/css/styles.css" type="text/css" />
-    <script type="text/javascript" src="lib/css/table.js"></script>
   <!-- Other scripts -->
   <script type="text/javascript">
    document.documentElement.className = document.documentElement.className.replace(/\bnojs\b/g, 'js');
@@ -55,7 +53,6 @@
    </nav>
    <img class="grpelem" id="u425-4" alt="Tune Source" src="images/u425-4.png" data-image-width="204"/><!-- rasterized frame -->
    <div class="grpelem" id="u1134"><!-- custom html -->
-    <div class="conteiner">
     <div class="player">
     <div class="pl"></div>
     <div class="title"></div>
@@ -69,43 +66,8 @@
     </div>
     <div class="volume"></div>
     <div class="tracker"></div>
-</div> 
-        
-<script>
-    function audio(nu){
-        switch(nu){
-            case 1:
-                src = "uploads/01.mp3";
-                document.getElementById('audios').src = src;
-                break;
-            case 2:
-                src = "uploads/02.mp3";
-                document.getElementById('audios').src = src;
-                break;
-            case 3:
-                src = "uploads/03.mp3";
-                document.getElementById('audios').src = src;
-                break;
-            case 4:
-                src = "uploads/04.mp3";
-                document.getElementById('audios').src = src;
-                break;
-            case 5:
-                src = "uploads/05.mp3";
-                document.getElementById('audios').src = src;
-                break;
-            case 6:
-                src = "uploads/06.mp3";
-                document.getElementById('audios').src = src;
-                break;
-            case 7:
-                src = "uploads/07.mp3";
-                document.getElementById('audios').src = src;
-                break;
-        }
-    }
-    </script>
-<ul class="playlist ">
+</div>
+<ul class="playlist">
 
     
     
@@ -117,24 +79,23 @@
 		echo "leer db";
 	?>
     
-    <li audiourl="<?php echo $folder.$row['file'] ?>" cover="cover2.jpg" artist="Artist 2" onclick="audio(1)">01.mp3</li>
-	     <?php
-    }
-	?>
+    <li audiourl="<?php echo $folder.$row['file'] ?>" cover="cover2.jpg" artist="Artist 2">"01.mp3"</li>
+	     
     
 
-    <li audiourl="02.mp3" cover="cover2.jpg" artist="Artist 2" onclick="audio(2)">02.mp3</li>
-    <li audiourl="03.mp3" cover="cover3.jpg" artist="Artist 3" onclick="audio(3)">03.mp3</li>
-    <li audiourl="04.mp3" cover="cover4.jpg" artist="Artist 4" onclick="audio(4)">04.mp3</li>
-    <li audiourl="05.mp3" cover="cover5.jpg" artist="Artist 5" onclick="audio(5)">05.mp3</li>
-    <li audiourl="06.mp3" cover="cover6.jpg" artist="Artist 6" onclick="audio(6)">06.mp3</li>
-    <li audiourl="07.mp3" cover="cover7.jpg" artist="Artist 7" onclick="audio(7)">07.mp3</li>
-    <audio controls>
-  <source id="audios" src=""  type="audio/mpeg">
+    <li audiourl="02.mp3" cover="cover2.jpg" artist="Artist 2">02.mp3</li>
+    <li audiourl="03.mp3" cover="cover3.jpg" artist="Artist 3">03.mp3</li>
+    <li audiourl="04.mp3" cover="cover4.jpg" artist="Artist 4">04.mp3</li>
+    <li audiourl="05.mp3" cover="cover5.jpg" artist="Artist 5">05.mp3</li>
+    <li audiourl="06.mp3" cover="cover6.jpg" artist="Artist 6">06.mp3</li>
+    <li audiourl="07.mp3" cover="cover7.jpg" artist="Artist 7">07.mp3</li>
+
+<audio controls>
+  <source src="playlist" type="audio/mpeg">
 Your browser does not support the audio element.
 </audio>
 </ul>
-       </div>
+       
 </div>
    <div class="grpelem" id="u1431"><!-- custom html -->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
